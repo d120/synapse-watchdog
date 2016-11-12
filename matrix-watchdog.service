@@ -1,0 +1,11 @@
+[Unit]
+Description=Matrix server watchdog
+
+[Service]
+WorkingDirectory=/opt
+ExecStart=/usr/bin/python3 /opt/matrix-watchdog.py
+Restart=on-abort
+User=synapse
+
+[Install]
+WantedBy=multi-user.target
