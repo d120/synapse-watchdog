@@ -23,8 +23,9 @@ try:
       print(ret.status, file=sys.stderr)
     except:
       print("error", file=sys.stderr)
-      call(["sudo", "systemctl", "restart", "synapse"])
-      sleep(90)
+      call(["sudo", "systemctl", "kill", "matrix-synapse"])
+      call(["sudo", "systemctl", "restart", "matrix-synapse"])
+      sleep(120)
     sleep(30)
 except KeyboardInterrupt:
   print("")
